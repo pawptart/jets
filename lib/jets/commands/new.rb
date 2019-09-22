@@ -15,6 +15,7 @@ module Jets::Commands
         [:mode, default: 'html', desc: "mode: #{VALID_MODES.join(',')}"],
         [:repo, desc: "GitHub repo to use. Format: user/repo"],
         [:webpacker, type: :boolean, default: true, desc: "Install webpacker"],
+        [:activerecord, type: :boolean, default: true, desc: "Install ActiveRecord"],
       ]
     end
 
@@ -44,6 +45,8 @@ module Jets::Commands
         puts "Invalid mode provided: #{@options[:mode].color(:red)}. Please pass in an valid mode: #{VALID_MODES.join(',').color(:green)}."
         exit 1
       end
+
+      @activerecord = options[:activerecord]
     end
 
     def create_project

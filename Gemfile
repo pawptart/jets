@@ -10,5 +10,6 @@ group :development, :test do
   gem "mysql2", "~> 0.5.2"
   gem "dynomite"
   gem "webpacker", git: "https://github.com/tongueroo/webpacker.git", branch: "jets"
-  gem "rspec_junit_formatter"
+  gem "activerecord", "~> 6.0.0"
+  gem "railties", "~> 6.0.0"
 end
